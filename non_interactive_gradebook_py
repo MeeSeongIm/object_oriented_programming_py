@@ -1,4 +1,4 @@
-# non-interactive grade book (organizing data)
+# non-interactive gradebook (organizing data)
 # computes mean, median, standard deviation, variance. 
 
 from math import sqrt
