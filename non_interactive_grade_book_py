@@ -109,13 +109,31 @@ print("Total possible on the final is %s points." % fin_tot_poss)
 
 print("\n")
 
-"""
-print(ex_tot_pts(1))
-print(hw_tot_pts(1))
-print(quiz_tot_pts(1))
-print(proj_tot_pts(1))
-print(fin_tot_pts(1))
-"""
+
+for j in range(1, len(unique_id)):
+    print("%s %s has a total of %s exam points." % (unique_id[j]["Last"], unique_id[j]["First"], ex_tot_pts(j)))
+
+print("\n")
+
+for j in range(1, len(unique_id)):
+    print("%s %s has a total of %s HW points." % (unique_id[j]["Last"], unique_id[j]["First"], hw_tot_pts(j)))
+
+print("\n")
+
+for j in range(1, len(unique_id)):
+    print("%s %s has a total of %s quiz points." % (unique_id[j]["Last"], unique_id[j]["First"], quiz_tot_pts(j)))
+
+print("\n")
+
+for j in range(1, len(unique_id)):
+    print("%s %s has a total of %s project points." % (unique_id[j]["Last"], unique_id[j]["First"], proj_tot_pts(j)))
+
+print("\n")
+
+for j in range(1, len(unique_id)):
+    print("%s %s has a total of %s final points." % (unique_id[j]["Last"], unique_id[j]["First"], fin_tot_pts(j)))
+
+print("\n")
 
 for j in range(1, len(unique_id)):
     print("%s %s has exam average %s." % (unique_id[j]["Last"], unique_id[j]["First"], rescaled_exam(j))) 
@@ -169,5 +187,3 @@ variance = std_deviation**2
 print("The standard deviation for this class is %s and the variance is %s." % (std_deviation, variance))
 
  
-
-
