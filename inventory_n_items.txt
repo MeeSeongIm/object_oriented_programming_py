@@ -1,0 +1,23 @@
+Inventory Quantity: 
+0: 10 
+1: 10 
+2: 10 
+Inventory Cost: 
+0: $1.0 
+1: $2.0 
+2: $3.0 
+Inventory Quantity Sold: 
+0: 10 
+1: 5 
+2: 0 
+
+Quantifying New Arrival. 
+Total Inventory. 
+0: 10 
+1: 10 
+2: 10 
+
+Gross Total for the Day: $20.0. 
+Net Total for the Day: $2.0. 
+Summary of Total Inventory Per Day: [{0: 10, 1: 10, 2: 10}, {0: 10, 1: 10, 2: 10}] 
+Net Total in Dollars: [0, 2.0] 
