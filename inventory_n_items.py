@@ -4,6 +4,7 @@
 day = []   # a list of investory left for that day 
 stock = []
 shopping_list = []
+profit = [0]
 
 quantity_available = {}
 cost = {}
@@ -77,9 +78,27 @@ for i in range(len(stock)):
 
 day.append(dict(quantity_left))
 
-print("\n") 
-print("Summary of Total Inventory Per Day: %s " % day)
+gross_total = 0
+net_total = 0
+
  
-
-
+for i in range(len(stock)):
+    gross_total += int(quantity_sold[i])*int(cost[i])
     
+
+for i in range(len(stock)):
+    net_total += int(quantity_sold[i])*int(cost[i])*0.10      # 10% per item sold is the net profit 
+
+
+profit.append(net_total)
+
+print("Gross Total for the Day: $%s." % gross_total)
+print("Net Total for the Day: $%s." % net_total)
+
+
+
+print("\n")  
+print("Summary of Total Inventory Per Day: %s " % day)   
+print("Net Total in $: %s" % profit)  
+
+
