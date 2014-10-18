@@ -1,4 +1,4 @@
-Date: 10/18/2014. Time: 15:18:7. 
+Date: 10/18/2014. Time: 16:39:56. 
 
 Inventory Quantity: 
 0: 10 
@@ -31,9 +31,5 @@ Net Profit for the Day: $2.0.
 Summary of Total Inventory Per Day. 
 Initial Stock of Items: {0: 10, 1: 10, 2: 10} 
 
-Total Stock as of 10/18/2014 15:18:7: {0: 10, 1: 10, 2: 10} 
+Total Stock as of 10/18/2014 16:39:56: {0: 10, 1: 10, 2: 10} 
 Net Profit in Dollars: $2.0 
-
-
-
-
