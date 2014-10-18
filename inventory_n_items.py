@@ -1,5 +1,13 @@
 # inventory, stock management
 
+from datetime import datetime
+
+file = open("inventory_n_items.txt", "r+")
+
+now = datetime.now()
+
+file.write("Date: %s/%s/%s. Time: %s:%s:%s. \n\n" % (now.month, now.day, now.year, now.hour, now.minute, now.second))
+
 day = []   # a list of investory left for that day 
 stock = []
 shopping_list = []
@@ -11,8 +19,7 @@ quantity_sold = {}
 new_arrival = {}
 quantity_left = {}
 
-file = open("inventory_n_items.txt", "r+")
-
+ 
 
 yes = {"yes", "ye", "y"}  
 i=0 
@@ -41,7 +48,7 @@ for i in range(len(stock)):
     print("%s: %s " % (stock[i], quantity_available[i]) )
     file.write("%s: %s \n" % (stock[i], quantity_available[i]))
  
-    
+file.write("\n")    
 
 print("Inventory Cost: ")
 file.write("Inventory Cost: \n")
@@ -61,6 +68,8 @@ for i in range(len(stock)):
     else:
         quantity_sold[i] = 0
 
+
+file.write("\n")
 print("Inventory Quantity Sold: ")
 file.write("Inventory Quantity Sold: \n")
 for i in range(len(stock)):
@@ -69,22 +78,24 @@ for i in range(len(stock)):
 
 print("\n")
 file.write("\n")
-print("Quantifying New Arrival. ")
-file.write("Quantifying New Arrival. \n")
+print("Quantifying New Arrival/Shipment. ")
+file.write("Quantifying New Arrival/Shipment: \n")
 for i in range(len(stock)):
     new_arrival_item = input("Number of Item %s shipped in: " % stock[i])
     if new_arrival_item.isnumeric() == True:
         new_arrival[i] = int(new_arrival_item)
     else:
         new_arrival[i] = 0
+    file.write("%s: %s \n" % (stock[i], new_arrival[i]))
         
 for i in range(len(stock)):
     quantity_left[i] = quantity_available[i] - quantity_sold[i] + new_arrival[i]
 
 print("\n")
+file.write("\n")
  
 print("Total Inventory. ")
-file.write("Total Inventory. \n")
+file.write("Total Inventory: \n")
 print("Item Number: Quantity")
 for i in range(len(stock)):
     print("%s: %s " % (stock[i], quantity_left[i]))
@@ -107,18 +118,25 @@ for i in range(len(stock)):
 profit.append(net_total)
 
 print("Gross Total for the Day: $%s." % gross_total)
-print("Net Total for the Day: $%s." % net_total)
+print("Net Profit for the Day: $%s." % net_total)
 file.write("\n")
 file.write("Gross Total for the Day: $%s. \n" % gross_total)
-file.write("Net Total for the Day: $%s. \n" % net_total)
+file.write("Net Profit for the Day: $%s. \n\n" % net_total)
 
 
 print("\n")  
-print("Summary of Total Inventory Per Day: %s " % day)    
-print("Net Total in Dollars: %s" % profit)  
-file.write("Summary of Total Inventory Per Day: %s \n" % day)
-file.write("Net Total in Dollars: %s \n" % profit)
+print("Summary of Total Inventory Per Day. ")
+file.write("Summary of Total Inventory Per Day. \n")
+print("Initial Stock of Items: %s \n" % day[0])
+file.write("Initial Stock of Items: %s \n\n" % day[0])
+for i in range(1,len(day)):
+    print("Total Stock as of %s/%s/%s %s:%s:%s: %s" % (now.month, now.day, now.year, now.hour, now.minute, now.second, day[i]))
+    print("Net Total in Dollars: %s" % profit[i])  
+    file.write("Total Stock as of %s/%s/%s %s:%s:%s: %s \n" % (now.month, now.day, now.year, now.hour, now.minute, now.second, day[i]))
+    file.write("Net Profit in Dollars: %s \n" % profit[i])
 
 file.close()
+
+
 
 
