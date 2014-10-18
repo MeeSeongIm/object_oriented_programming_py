@@ -131,9 +131,9 @@ print("Initial Stock of Items: %s \n" % day[0])
 file.write("Initial Stock of Items: %s \n\n" % day[0])
 for i in range(1,len(day)):
     print("Total Stock as of %s/%s/%s %s:%s:%s: %s" % (now.month, now.day, now.year, now.hour, now.minute, now.second, day[i]))
-    print("Net Total in Dollars: %s" % profit[i])  
+    print("Net Total in Dollars: $%s" % profit[i])  
     file.write("Total Stock as of %s/%s/%s %s:%s:%s: %s \n" % (now.month, now.day, now.year, now.hour, now.minute, now.second, day[i]))
-    file.write("Net Profit in Dollars: %s \n" % profit[i])
+    file.write("Net Profit in Dollars: $%s \n" % profit[i])
 
 file.close()
 
