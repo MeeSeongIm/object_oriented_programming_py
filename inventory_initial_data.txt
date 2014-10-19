@@ -1,0 +1,11 @@
+Date:10/18/2014. Time: 19:1:35. 
+
+Inventory Quantity: 
+0: 10 
+1: 10 
+2: 10 
+
+Inventory Cost: 
+0: $1.0 
+1: $2.0 
+2: $3.0 
