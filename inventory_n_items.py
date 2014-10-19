@@ -44,9 +44,10 @@ with io.open("inventory_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", enc
             i += 1
 
         day.append(dict(quantity_available))   # initial data.
-        """We could modify the above so that (previous day's) inventory does not need to be re-entered each time this code is run; 
-        new items would then be added to the previous day's inventory list and 
-        one could write lines (in this code) so that cost for inventory from previous day could be modified by a personnel when running this code. """
+        """We could modify the above so that (previous day's) inventory does not need to be re-entered each time 
+        this code is run; new items would then be added to the previous day's inventory list and 
+        one could write lines (in this code) so that cost for inventory from previous day could be 
+        modified by a personnel when running this code. """
 
         print("Each Item's Unique ID: %s" % stock)
         print("Inventory Quantity: ")
