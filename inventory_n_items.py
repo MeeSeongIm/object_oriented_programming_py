@@ -1,11 +1,13 @@
 # inventory, stock management
+# new initial and data text files are created after each run. 
+
 
 from datetime import datetime
 import io
 
 now = datetime.now()  
 with io.open("inventory_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", encoding="utf-8") as file:
-    with io.open("inventory_initial_data.txt" , "w", encoding= "utf-8") as f:
+    with io.open("inventory_init_data_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", encoding= "utf-8") as f:
 
         f.write("Date:%s/%s/%s. Time: %s:%s:%s. \n\n" % (now.month, now.day, now.year, now.hour, now.minute, now.second))
         file.write("Date: %s/%s/%s. Time: %s:%s:%s. \n\n" % (now.month, now.day, now.year, now.hour, now.minute, now.second))
@@ -13,8 +15,8 @@ with io.open("inventory_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", enc
         day = []   # a list of inventory available at closing  
         stock = []
         shopping_list = []
-        profit = [0]
-
+        profit = [0] 
+        
         quantity_available = {}
         cost = {}
         quantity_sold = {}
@@ -41,7 +43,10 @@ with io.open("inventory_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", enc
             new_item = input("New item? ").lower()
             i += 1
 
-        day.append(dict(quantity_available))   # initial data
+        day.append(dict(quantity_available))   # initial data.
+        """We could modify the above so that (previous day's) inventory does not need to be re-entered each time this code is run; 
+        new items would then be added to the previous day's inventory list and 
+        one could write lines (in this code) so that cost for inventory from previous day could be modified by a personnel when running this code. """
 
         print("Each Item's Unique ID: %s" % stock)
         print("Inventory Quantity: ")
@@ -146,3 +151,7 @@ with io.open("inventory_%s-%s-%s.txt" % (now.month, now.day, now.year), "w", enc
         f.close()
         file.close()
 
+
+
+
+ 
