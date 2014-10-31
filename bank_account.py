@@ -1,9 +1,10 @@
+
  
 class Person():
     print("New customer.")
 
 class Checking_Acct(Person):
-    money = 0 
+    money = 0
     def __init__(self):
         print("Checking Account opened.")
         
@@ -46,7 +47,7 @@ class Savings_Acct(Person):
         self.savings_withdraw -= amount 
 
 money = 7000             # automatic deposit 
-m = 1                   # m = months 
+m = 12                   # m = months 
 acct_transf = 500 
 
 person = Checking_Acct()
@@ -66,6 +67,8 @@ for i in range(m):
 print("Checking Account Balance: %.2f" % person.money)
 print("Savings Account Balance: %.2f" % second_account.savings_money)
  
+ 
+
 
 
 
