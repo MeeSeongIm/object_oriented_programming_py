@@ -1,5 +1,4 @@
 
-
 # library system
 # library management operations: registering a student, issue or return a book, late fees, etc. 
 
@@ -10,7 +9,10 @@ print(datetime.now())
 months = 1
 late_fee_per_day = 0.15
 
- 
+# optional: make a list of customers and all their personal info. 
+# make an automated timer so that if the book is due on day phi, self.basket[self.call_number] += 1 each day.
+# make an automated reminder requesting for the book to be returned (to be sent out weekly) if the book is due on day phi.
+
 
 class Library_Account(object):
     def __init__(self, first_name, last_name, student_id):
@@ -97,5 +99,4 @@ new_faculty.late_fee(0)
 print(new_faculty.basket)
 new_faculty.return_book("516.36 C763s1999") 
 print(new_faculty.basket) 
-
 
