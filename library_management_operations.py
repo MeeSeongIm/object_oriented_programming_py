@@ -61,16 +61,17 @@ new_student.checkout("510_Am4p_v.29")
 print(new_student.basket) 
 new_student.late_fee(0)
 
+print("\n")
 
 new_faculty = Faculty_Staff_Grad("Mary", "Jones", "012984378")
 new_faculty.card("2009834598")
 print(new_faculty.return_card_no())
 new_faculty.checkout("516.35_N145l")
 new_faculty.late_fee(3)
+new_faculty.basket[new_faculty.call_number] = 3
 print(new_faculty.basket)
 
 new_faculty.checkout("516.36 C763s1999")
 new_faculty.late_fee(0)
 print(new_faculty.basket)
- 
  
