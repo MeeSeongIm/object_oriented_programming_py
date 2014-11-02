@@ -3,11 +3,14 @@
 # library system
 # library management operations: registering a student, issue or return a book, late fees, etc. 
 
-from datetime import datetime 
+from datetime import datetime
 
+print(datetime.now())
  
 months = 1
 late_fee_per_day = 0.15
+
+ 
 
 class Library_Account(object):
     def __init__(self, first_name, last_name, student_id):
@@ -80,13 +83,13 @@ print(new_student.basket)
 print("\n")
 
 
-
+n = 6
 new_faculty = Faculty_Staff_Grad("Mary", "Jones", "012984378")
 new_faculty.card("2009834598")
 print(new_faculty.return_card_no())
 new_faculty.checkout("516.35_N145l")
-new_faculty.late_fee(3)
-new_faculty.basket[new_faculty.call_number] = 3
+new_faculty.late_fee(n)
+new_faculty.basket[new_faculty.call_number] = n
 print(new_faculty.basket)
 
 new_faculty.checkout("516.36 C763s1999")
@@ -94,6 +97,5 @@ new_faculty.late_fee(0)
 print(new_faculty.basket)
 new_faculty.return_book("516.36 C763s1999") 
 print(new_faculty.basket) 
-
 
 
