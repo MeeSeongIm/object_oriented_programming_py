@@ -1,4 +1,5 @@
 
+
 # library system
 # library management operations: registering a student, issue or return a book, late fees, etc. 
 
@@ -34,7 +35,11 @@ class Library_Account(object):
     def late_fee(self, days):
         self.days = days
         print("%s %s: your late fee is $%s per day. So far, your book is late by %s days." % (self.first_name, self.last_name, late_fee_per_day, self.days))
-        
+
+    def return_book(self, call_number):
+        self.call_number = call_number
+        del self.basket[self.call_number]
+
 class Faculty_Staff_Grad(Library_Account):
     def checkout(self, call_number):
         self.call_number = call_number
@@ -61,7 +66,20 @@ new_student.checkout("510_Am4p_v.29")
 print(new_student.basket) 
 new_student.late_fee(0)
 
+new_student.return_book("510_Am4p_v.29")
+print(new_student.basket)
+
+new_student.checkout("book2")
+new_student.checkout("book3")
+new_student.checkout("book4")
+print(new_student.basket)
+
+new_student.return_book("book3")
+print(new_student.basket)
+
 print("\n")
+
+
 
 new_faculty = Faculty_Staff_Grad("Mary", "Jones", "012984378")
 new_faculty.card("2009834598")
@@ -74,4 +92,8 @@ print(new_faculty.basket)
 new_faculty.checkout("516.36 C763s1999")
 new_faculty.late_fee(0)
 print(new_faculty.basket)
- 
+new_faculty.return_book("516.36 C763s1999") 
+print(new_faculty.basket) 
+
+
+
