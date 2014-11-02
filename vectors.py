@@ -20,7 +20,7 @@ class Vector:
     def __dotProduct__(self, other):
         return self.x*other.x+self.y*other.y+self.z*other.z+self.w*other.w
 
-# cross-product for a quadruple: use Gram-Schmidt algorithm. 
+# cross-product for a quadruple: use Gram-Schmidt orthogonalization algorithm. 
 
 v1 = Vector(40,30,20,10)
 v2 = Vector(10,20,30,40)
